@@ -45,18 +45,18 @@ def decode_char(char)
 end
 
 def decode_word(word)
-  mors_Word = ''
+  mors_word = ''
   myWordArray = word.split
-  myWordArray.each { |x| mors_Word += decode_char(x) }
-  mors_Word
+  myWordArray.each { |x| mors_word += decode_char(x) }
+  mors_word
 end
 
 def decode(words)
-  my_Sentence = ''
+  my_sentence = ''
   words = words.split('   ')
-  words.each { |x| my_Sentence += "#{decode_word(x)} " }
-  my_Sentence.chop
+  words.each { |x| my_sentence += "#{decode_word(x)} " }
+  my_sentence.chop
 end
 
-mors_Sentence = decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
-puts mors_Sentence
+mors_sentence = decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+puts mors_sentence
