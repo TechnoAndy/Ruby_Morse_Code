@@ -22,3 +22,11 @@ def decode_word(word)
     return morsWord
 end
 
+def decode(words)
+    mySentence = ""
+    words = words.split("   ")
+    words.each { |x| mySentence += decode_word(x) + " "}
+    return mySentence.chop
+end
+
+
