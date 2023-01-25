@@ -46,8 +46,8 @@ end
 
 def decode_word(word)
   mors_word = ''
-  myWordArray = word.split
-  myWordArray.each { |x| mors_word += decode_char(x) }
+  my_word_array = word.split
+  my_word_array.each { |x| mors_word += decode_char(x) }
   mors_word
 end
 
