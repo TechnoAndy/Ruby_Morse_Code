@@ -1,36 +1,24 @@
-ALPHABET = {
-  '.-' => 'A',
-  '-...' => 'B',
-  '-.-.' => 'C',
-  '-..' => 'D',
-  '.' => 'E',
-  '..-.' => 'F',
-  '--.' => 'G',
-  '....' => 'H',
-  '..' => 'I',
-  '.---' => 'J',
-  '-.-' => 'K',
-  '.-..' => 'L',
-  '--' => 'M',
-  '-.' => 'N',
-  '---' => 'O',
-  '.--.' => 'P',
-  '--.-' => 'Q',
-  '.-.' => 'R',
-  '...' => 'S',
-  '-' => 'T',
-  '..-' => 'U',
-  '...-' => 'V',
-  '.--' => 'W',
-  '-..-' => 'X',
-  '-.--' => 'Y',
-  '--..' => 'Z'
-}.freeze
+def decode_char(char)
+    morsdict = { ".-" => "A", "-..."  => "B", "-.-." => "C", "-.." => "D",
+                 "."  =>  "E", "..-." => "F", "--." => "G", "...." => "H",
+                 ".." => "I", ".---"  => "J", "-.-" => "K", ".-.." => "L",
+                 "--" => "M", "-."  => "N"  , "---" => "O", ".--." => "P",
+                 "--.-" => "Q", ".-." => "R", "..." => "S", "-" => "T",
+                 "..-" => "U", "...-" => "V", ".--" => "W", "-..-" => "X",
+                 "-.--" => "Y", "--.." => "Z",
+                 "-----" => "0", ".----" => "1", "..---" => "2", "...--" => "3",
+                 "....-" => "4", "....." => "5", "-...." => "6", "--..." => "7",
+                 "---.." => "8", "----." => "9", ".-.-.-" => "Fullstop",
+                 "--..--" => "Comma", "..--.." => "Query" 
+    }
 
-# Create a method to decode a Morse code character, takes a string parameter, and return the corresponding character in uppercase (e.g. decode_char(".-") returns "A").
-def decode_char(code_char)
-  ALPHABET[code_char]
+  return morsdict[char]
 end
-  
-puts decode_char('.-')
-  
+
+def decode_word(word)
+    morsWord = ""
+    myWordArray = word.split
+    myWordArray.each { |x| morsWord +=  decode_char(x) }
+    return morsWord
+end
+
