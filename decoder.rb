@@ -12,7 +12,7 @@ def decode_char(char)
                  "--..--" => "Comma", "..--.." => "Query" 
     }
 
-  return morsdict[char]
+    return morsdict[char]
 end
 
 def decode_word(word)
@@ -20,13 +20,6 @@ def decode_word(word)
     myWordArray = word.split
     myWordArray.each { |x| morsWord +=  decode_char(x) }
     return morsWord
-end
-
-def decode(words)
-    mySentence = ""
-    words = words.split("   ")
-    words.each { |x| mySentence += decode_word(x) + " "}
-    return mySentence.chop
 end
 
 
